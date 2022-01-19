@@ -24,6 +24,5 @@ public class logon_step extends ScenarioSteps {
         loginPage.confirmBtn.click();
         loginPage.clickNextBtn.click();
         loginPage.codebox.sendKeys(codebox);
-        bddUtil.sleep(20000);
     }
 }

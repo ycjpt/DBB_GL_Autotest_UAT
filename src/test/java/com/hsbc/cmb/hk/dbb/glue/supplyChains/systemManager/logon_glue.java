@@ -1,6 +1,6 @@
-package com.hsbc.cmb.hk.dbb.glue.supplyChains;
+package com.hsbc.cmb.hk.dbb.glue.supplyChains.systemManager;
 
-import com.hsbc.cmb.hk.dbb.steps.supplyChains.logon_step;
+import com.hsbc.cmb.hk.dbb.steps.supplyChains.systemManager.logon_step;
 import com.hsbc.cmb.hk.dbb.utils.BDDUtil;
 import cucumber.api.java.en.Given;
 import net.thucydides.core.annotations.ManagedPages;
@@ -16,7 +16,7 @@ public class logon_glue {
     public static String envTag;
     private BDDUtil bddUtil;
 
-    @Given("^logon \"([^\"]*)\" USO system page$")
+    @Given("^logon \"([^\"]*)\" on tube by inputting system$")
     public void logon_onboarding_custom_portal(String envName) {
         envTag = envName;
         if (!envName.isEmpty()) {

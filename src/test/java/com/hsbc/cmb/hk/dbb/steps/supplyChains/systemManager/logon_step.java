@@ -1,6 +1,6 @@
-package com.hsbc.cmb.hk.dbb.steps.supplyChains;
+package com.hsbc.cmb.hk.dbb.steps.supplyChains.systemManager;
 
-import com.hsbc.cmb.hk.dbb.pages.supplyChains.logon_page;
+import com.hsbc.cmb.hk.dbb.pages.supplyChains.systemManager.logon_page;
 import com.hsbc.cmb.hk.dbb.utils.CommonUtil;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
