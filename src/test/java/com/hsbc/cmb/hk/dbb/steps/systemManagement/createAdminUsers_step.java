@@ -1,23 +1,35 @@
 package com.hsbc.cmb.hk.dbb.steps.systemManagement;
 
-import com.hsbc.cmb.hk.dbb.pages.supplyChains.creatCustomers_page;
-import com.hsbc.cmb.hk.dbb.pages.systemManagement.scf_page;
-import com.hsbc.cmb.hk.dbb.utils.BDDUtil;
-import com.hsbc.cmb.hk.dbb.utils.CommonUtil;
+import com.hsbc.cmb.hk.dbb.pages.systemManagement.createAdminUser_page;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import com.hsbc.cmb.hk.dbb.pages.CBSOnline.logon_page;
 
 public class createAdminUsers_step extends ScenarioSteps {
-    private logon_page loginPage;
-    private BDDUtil bddUtil;
-    private scf_page scfpage;
+    private createAdminUser_page createAdminUser_page;
 
 
     @Step
     public void create_Admin_User(){
-        scfpage.more.click();
-        bddUtil.sleep(20000);
+        createAdminUser_page.clickMore.click();
+        createAdminUser_page.clickSetting.click();
+        createAdminUser_page.clickAdminusers.click();
+        createAdminUser_page.clickcreateAdminuser.click();
+    }
+    @Step
+    public void getUsername(String value){
+        createAdminUser_page.userName.sendKeys(value);
+    }
 
+    @Step
+    public void getEmail(String value){
+        createAdminUser_page.eMail.sendKeys(value);
+    }
+    @Step
+    public void getUserNo(String value){
+        createAdminUser_page.userNo.sendKeys(value);
+    }
+    @Step
+    public void clickConfirm(){
+        createAdminUser_page.clickConfirm.click();
     }
 }
