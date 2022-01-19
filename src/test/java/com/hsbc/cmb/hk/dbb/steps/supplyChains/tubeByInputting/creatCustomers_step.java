@@ -40,9 +40,18 @@ public class creatCustomers_step extends ScenarioSteps {
     
     @Step
     public void getCustomerTypeValue(){
-        customers_page.customerTypeValue.click();
+        customers_page.customerTypeBuyer.click();
     }
 
+    @Step
+    public void getCustomerTypeSupplier(){
+        customers_page.customerTypeSupplier.click();
+    }
+
+    @Step
+    public void checkSuccessPageTitle(){
+        assertEquals("Customer Profiles",customers_page.checkSuccessPageTitle.getText());
+    }
     @Step
     public void getCompanyName(String value){
         customers_page.companyName.sendKeys(value);
@@ -122,6 +131,12 @@ public class creatCustomers_step extends ScenarioSteps {
     @Step
     public void clickSubmitBtn(){
         customers_page.submitBtn.click();
+    }
+
+    @Step
+    public void clickInputBySelectBox(){
+        customers_page.clickInputBySelectBox.click();
+        customers_page.inputByTypeCustomer.click();
     }
 
 }
