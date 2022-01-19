@@ -2,12 +2,16 @@ package com.hsbc.cmb.hk.dbb.steps.supplyChains.tubeByInputting;
 
 import com.hsbc.cmb.hk.dbb.pages.supplyChains.creatCustomers_page;
 import com.hsbc.cmb.hk.dbb.utils.BDDUtil;
+import com.hsbc.cmb.hk.dbb.utils.CommonUtil;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import static com.hsbc.cmb.hk.dbb.utils.AssertLocal.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class creatCustomers_step extends ScenarioSteps {
     private creatCustomers_page customers_page;
     private BDDUtil bddUtil;
+    public static String envTag;
 
     @Step
     public void getClickCustomersMenu(){
@@ -71,6 +75,11 @@ public class creatCustomers_step extends ScenarioSteps {
     }
 
     @Step
+    public void getCheckNextPage(){
+        assertEquals("Administrator 1",customers_page.checkNextPage.getText());
+    }
+
+    @Step
     public void getFirstNameInput(String value){
         customers_page.firstNameInput.sendKeys(value);
     }
@@ -97,7 +106,7 @@ public class creatCustomers_step extends ScenarioSteps {
 
     @Step
     public void getEmailSecondInput(String value){
-        customers_page.mobileSecondInput.sendKeys(value);
+        customers_page.emailSecondInput.sendKeys(value);
     }
 
     @Step
@@ -108,6 +117,11 @@ public class creatCustomers_step extends ScenarioSteps {
     @Step
     public void getMobileSecondInput(String value){
         customers_page.mobileSecondInput.sendKeys(value);
+    }
+
+    @Step
+    public void clickSubmitBtn(){
+        customers_page.submitBtn.click();
     }
 
 }
