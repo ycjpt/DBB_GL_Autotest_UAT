@@ -58,7 +58,6 @@ public class creatCustomers_glue {
         customers_step.getEmailSecondInput(email2);
         customers_step.getLastNameSecondInput("Kevin2");
         customers_step.getMobileSecondInput("13868098678");
-        bddUtil.sleep(100000);
 //        customers_step.clickSubmitBtn();
     }
 }
