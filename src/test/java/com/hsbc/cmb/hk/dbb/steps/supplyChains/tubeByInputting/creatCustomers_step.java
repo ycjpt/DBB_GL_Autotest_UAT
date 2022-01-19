@@ -1,6 +1,6 @@
 package com.hsbc.cmb.hk.dbb.steps.supplyChains.tubeByInputting;
 
-import com.hsbc.cmb.hk.dbb.pages.supplyChains.creatCustomers_page;
+import com.hsbc.cmb.hk.dbb.pages.supplyChains.tubeByInputting.creatCustomers_page;
 import com.hsbc.cmb.hk.dbb.utils.BDDUtil;
 import com.hsbc.cmb.hk.dbb.utils.CommonUtil;
 import net.thucydides.core.annotations.Step;
