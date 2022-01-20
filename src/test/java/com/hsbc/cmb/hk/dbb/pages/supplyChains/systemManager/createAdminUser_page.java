@@ -4,10 +4,7 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
-import static com.hsbc.cmb.hk.dbb.glue.systemManagement.createAdminUser_glue.getRandom;
-
 public class createAdminUser_page extends PageObject {
-    String code = getRandom();
 
     @FindBy(xpath = "//span[text()='More']")
     public WebElementFacade clickMore;
@@ -31,6 +28,18 @@ public class createAdminUser_page extends PageObject {
     public WebElementFacade userNo;
 
     @FindBy(xpath = "//div[@data-key='f2ncv1jl']//button")
-    public WebElementFacade clickConfirm;
+    public WebElementFacade clickConfirm_Create;
+
+    @FindBy(xpath = "//tr/td[text()='testt']/following-sibling::td[@data-key=\"f2io398b\"]//i[@class=\"lls-tooltip lls-icon-share\"]")
+    public WebElementFacade clickAuthoritySetting;
+
+    @FindBy(xpath = "//div[@class=\"tf-item\"]//div[@class=\"lls-cb-outdot\"]")
+    public WebElementFacade clickPermissionMenu;
+
+    @FindBy(xpath = "//div[@class=\"lls-tf-btn lls-tf-right lls-tf-rightact\"]")
+    public WebElementFacade clickImportMenu;
+
+    @FindBy(xpath = "//span[text()='Confirm']")
+    public WebElementFacade clickConfirm_Update;
 
 }

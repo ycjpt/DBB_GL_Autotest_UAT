@@ -22,7 +22,10 @@ public class creatCustomers_page extends PageObject {
     public WebElementFacade selectCustomerType;
 
     @FindBy(xpath = "//body[@class='el-popup-parent--hidden']/div[4]//span[text()='Buyer']")
-    public WebElementFacade customerTypeValue;
+    public WebElementFacade customerTypeBuyer;
+
+    @FindBy(xpath = "//span[text()='Supplier']")
+    public WebElementFacade customerTypeSupplier;
 
     @FindBy(xpath = "//label[@for='custEnglishName']/following-sibling::div//input")
     public WebElementFacade companyName;
@@ -74,4 +77,16 @@ public class creatCustomers_page extends PageObject {
 
     @FindBy(xpath = "//span[text()='Submit ']")
     public WebElementFacade submitBtn;
+
+    @FindBy(xpath = "//span[text()='Customer Profiles']")
+    public WebElementFacade checkSuccessPageTitle;
+
+    @FindBy(xpath = "//label[@for='autoCustBuild']/following-sibling::div//span[@class='lls-input__suffix-inner']")
+    public WebElementFacade clickInputBySelectBox;
+
+    @FindBy(xpath = "//span[text()='Customer']")
+    public WebElementFacade inputByTypeCustomer;
+
+    @FindBy(xpath = "//span[text()='Operator']")
+    public WebElementFacade inputByTypeOperator;
 }
