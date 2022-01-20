@@ -26,10 +26,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.assertTrue;
 
@@ -40,6 +37,9 @@ import static org.junit.Assert.assertTrue;
  */
 
 public class BDDUtil extends PageObject {
+    private Set<String> handles;
+    private String homeWindow;
+    private String thirdWindow;
 
     @FindBy(id = "userName")
     private WebElementFacade userNameInputBox;
@@ -548,6 +548,10 @@ public class BDDUtil extends PageObject {
         sleep(1);
     }
 
+    public void quitDriver(){
+        getDriver().quit();
+    }
+
     public void clickWithRetry(WebElementFacade element){
         int i=2;
         sleep(2);
@@ -601,6 +605,45 @@ public class BDDUtil extends PageObject {
         } else {
             throw new RuntimeException("Failed to select profile");
         }
+    }
+
+    public void switchToSecondWindows(){
+        //获取当前窗口句柄
+        String win = getDriver().getWindowHandle();
+        //获取所有窗口句柄
+        Set<String>Windows = getDriver().getWindowHandles();
+        //把获取到的窗口句柄放到list中
+        List<String>allWindows = new ArrayList<String>(Windows);
+        int j = 0;
+        //切换到新打开的窗口并最大化
+        for (int i = 0; i < allWindows.size(); i++) {
+            if (!allWindows.get(i).equals(win)) {
+                j = i;
+            }
+        }
+        getDriver().switchTo().window(allWindows.get(j-1));
+    }
+
+    public void switchToWindows(){
+        //获取当前窗口句柄
+        String win = getDriver().getWindowHandle();
+        //获取所有窗口句柄
+        Set<String>Windows = getDriver().getWindowHandles();
+        //把获取到的窗口句柄放到list中
+        List<String>allWindows = new ArrayList<String>(Windows);
+        int j = 0;
+        //切换到新打开的窗口并最大化
+        for (int i = 0; i < allWindows.size(); i++) {
+            if (!allWindows.get(i).equals(win)) {
+                j = i;
+            }
+        }
+        getDriver().switchTo().window(allWindows.get(j));
+    }
+
+    public void switchToHomeWindow(){
+        getDriver().close();
+        getDriver().switchTo().window(homeWindow);
     }
 
     public void switchToNewWindow(){
