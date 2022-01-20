@@ -1,6 +1,6 @@
-package com.hsbc.cmb.hk.dbb.glue.systemManagement;
+package com.hsbc.cmb.hk.dbb.glue.supplyChains.systemManager;
 
-import com.hsbc.cmb.hk.dbb.steps.systemManagement.createAdminUsers_step;
+import com.hsbc.cmb.hk.dbb.steps.supplyChains.systemManager.createAdminUsers_step;
 import com.hsbc.cmb.hk.dbb.utils.BDDUtil;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;

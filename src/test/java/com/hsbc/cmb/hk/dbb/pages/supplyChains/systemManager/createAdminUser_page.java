@@ -1,5 +1,6 @@
-package com.hsbc.cmb.hk.dbb.pages.systemManagement;
+package com.hsbc.cmb.hk.dbb.pages.supplyChains.systemManager;
 
+import com.hsbc.cmb.hk.dbb.steps.supplyChains.systemManager.createAdminUsers_step;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -30,7 +31,7 @@ public class createAdminUser_page extends PageObject {
     @FindBy(xpath = "//div[@data-key='f2ncv1jl']//button")
     public WebElementFacade clickConfirm_Create;
 
-    @FindBy(xpath = "//tr/td[text()='testt']/following-sibling::td[@data-key=\"f2io398b\"]//i[@class=\"lls-tooltip lls-icon-share\"]")
+    @FindBy(xpath = "//td[@title=\"1\"]/following-sibling::td[@data-key=\"f2io398b\"]//i[@class=\"lls-tooltip lls-icon-share\"]")
     public WebElementFacade clickAuthoritySetting;
 
     @FindBy(xpath = "//div[@class=\"tf-item\"]//div[@class=\"lls-cb-outdot\"]")
@@ -41,5 +42,4 @@ public class createAdminUser_page extends PageObject {
 
     @FindBy(xpath = "//span[text()='Confirm']")
     public WebElementFacade clickConfirm_Update;
-
 }

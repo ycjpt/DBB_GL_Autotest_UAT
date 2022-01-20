@@ -1,18 +1,18 @@
-package com.hsbc.cmb.hk.dbb.steps.systemManagement;
+package com.hsbc.cmb.hk.dbb.steps.supplyChains.systemManager;
 
-import com.hsbc.cmb.hk.dbb.pages.supplyChains.systemManager.logon_page;
+import com.hsbc.cmb.hk.dbb.pages.supplyChains.systemManager.createAdminUser_page;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.openqa.selenium.By;
 
 import static com.hsbc.cmb.hk.dbb.utils.RandomPhoneNumber.randomPhoneNum;
 
 public class createAdminUsers_step extends ScenarioSteps {
 
-    private String code = randomPhoneNum();
-    private logon_page.createAdminUser_page createAdminUser_page;
+    public static String code = randomPhoneNum();
 
 
-
+    private createAdminUser_page createAdminUser_page;
 
     @Step
     public void create_Admin_User(){
@@ -40,7 +40,6 @@ public class createAdminUsers_step extends ScenarioSteps {
     }
     @Step
     public void clickAuthoritySetting(){
-
         createAdminUser_page.clickAuthoritySetting.click();
     }
     @Step
