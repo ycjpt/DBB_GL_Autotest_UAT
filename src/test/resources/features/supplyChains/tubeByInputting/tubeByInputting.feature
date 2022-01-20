@@ -33,4 +33,3 @@ Feature: tube By Inputtingt
       And I click the email icon to send the email
       And I received an email from Green Union Bank on the email page
       Then I check that the email has been sent successfully
-      
