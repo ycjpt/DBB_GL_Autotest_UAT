@@ -4,6 +4,8 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
+import java.util.List;
+
 public class creatCustomers_page extends PageObject {
 
     @FindBy(xpath = "//span[text()='Customers']")
@@ -89,4 +91,25 @@ public class creatCustomers_page extends PageObject {
 
     @FindBy(xpath = "//span[text()='Operator']")
     public WebElementFacade inputByTypeOperator;
+
+    @FindBy(xpath = "//form[@class='form-inline']//input")
+    public WebElementFacade sendEmail;
+
+    @FindBy(xpath = "//form[@class='form-inline']//button")
+    public WebElementFacade createEmailButton;
+
+    @FindBy(xpath = "//td[@data-key='f38u3atf']")
+    public List<WebElementFacade> authPerson;
+
+    @FindBy(xpath = "//div[@class='lowcode-table default-theme']//table[@class='fixed-right-table']/tbody/tr[1]//i[@class='lls-tooltip lls-icon-send-mail']")
+    public WebElementFacade emailIcon;
+
+    @FindBy(xpath = "//div[@class='lls-message-box__wrapper']//span[contains(text(), 'Confirm')]")
+    public WebElementFacade confirmBtn;
+
+    @FindBy(xpath = "//span[text()='Green Link Digital Bank - Invitation']")
+    public WebElementFacade firstEmail;
+
+    @FindBy(xpath = "//span[text()='Green Link Digital Bank - Verify Identity']")
+    public WebElementFacade secondEmail;
 }

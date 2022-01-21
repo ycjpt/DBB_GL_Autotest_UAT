@@ -1,10 +1,17 @@
 package com.hsbc.cmb.hk.dbb.steps.supplyChains.tubeByInputting;
 
+import com.hsbc.cmb.hk.dbb.glue.supplyChains.tubeByInputting.creatCustomers_glue;
 import com.hsbc.cmb.hk.dbb.pages.supplyChains.tubeByInputting.creatCustomers_page;
 import com.hsbc.cmb.hk.dbb.utils.BDDUtil;
 import com.hsbc.cmb.hk.dbb.utils.CommonUtil;
+import com.hsbc.cmb.hk.dbb.utils.JRandomNameTool;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.openqa.selenium.JavascriptExecutor;
+
+import java.util.List;
+
 import static com.hsbc.cmb.hk.dbb.utils.AssertLocal.assertTrue;
 import static org.junit.Assert.assertEquals;
 
@@ -52,6 +59,7 @@ public class creatCustomers_step extends ScenarioSteps {
     public void checkSuccessPageTitle(){
         assertEquals("Customer Profiles",customers_page.checkSuccessPageTitle.getText());
     }
+
     @Step
     public void getCompanyName(String value){
         customers_page.companyName.sendKeys(value);
@@ -134,9 +142,39 @@ public class creatCustomers_step extends ScenarioSteps {
     }
 
     @Step
+    public void emailOperation(String value){
+        customers_page.sendEmail.clear();
+        customers_page.sendEmail.sendKeys(value);
+        customers_page.createEmailButton.click();
+    }
+
+    @Step
+    public void openEmailUrl(){
+        JavascriptExecutor webdriver = (JavascriptExecutor)getDriver();
+        webdriver.executeScript("window.open(\"https://mailtemp.top/\");");
+    }
+
+    @Step
     public void clickInputBySelectBox(){
         customers_page.clickInputBySelectBox.click();
         customers_page.inputByTypeCustomer.click();
     }
 
+    @Step
+    public void clickSendEmailBtn(){
+        bddUtil.sleep(5);
+        customers_page.emailIcon.click();
+        customers_page.confirmBtn.click();
+    }
+
+    @Step
+    public void checkSendEmailSuccess(){
+        assertEquals("Green Link Digital Bank - Invitation",customers_page.firstEmail.getText());
+    }
+
+    @Step
+    public void viewEmail(){
+        bddUtil.switchToNewWindow();
+        customers_page.firstEmail.click();
+    }
 }
