@@ -17,6 +17,9 @@ public class createBuyerCreditFile_step extends ScenarioSteps {
     @Step
     public void clickBuyerCreditProfileList(){
         createBuyerCreditFile_page.clickBuyerCreditProfileList.click();
+    }
+    @Step
+    public void clickCreateNewUnderwriting(){
         createBuyerCreditFile_page.clickCreateNewUnderwriting.click();
     }
     @Step
@@ -33,6 +36,16 @@ public class createBuyerCreditFile_step extends ScenarioSteps {
     @Step
     public void editBuyerCreditProfile(){
         createBuyerCreditFile_page.clickEditBuyerCreditProfile.click();
+    }
+
+    @Step
+    public void displayedCreateBuyerCreditProfilePage(){
+        if (createBuyerCreditFile_page.checkCreateBuyerCreditProfilePage.isDisabled()){
+            System.out.println("买方档案创建完成，开始编辑买方信息");
+        }
+    }
+    @Step
+    public void toEditBuyerCreditProfile(){
         createBuyerCreditFile_page.getLastFiscalYear.click();
         createBuyerCreditFile_page.pickAYear.click();
         createBuyerCreditFile_page.getDRSKRating.clear();
@@ -59,9 +72,10 @@ public class createBuyerCreditFile_step extends ScenarioSteps {
 //        createBuyerCreditFile_page.upOtherFiles.sendKeys("C:\\Users\\陈楠\\Desktop\\test.jpg");  //上传其它文件
         createBuyerCreditFile_page.clickSaveBuyerCreditProfile.click();
     }
+
     @Step
     public void submitBuyerProfileList(){
-
+        createBuyerCreditFile_page.clickSubmit.click();
     }
 
 }

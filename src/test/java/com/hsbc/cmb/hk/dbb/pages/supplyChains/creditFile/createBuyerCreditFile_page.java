@@ -33,6 +33,9 @@ public class createBuyerCreditFile_page extends PageObject {
     @FindBy(xpath = "//td[@title=\"1\"]/following-sibling::td[@data-key=\"f103l7h9\"]//span[@data-key=\"f3up86pa\"]//i")
     public WebElementFacade clickEditBuyerCreditProfile;
 
+    @FindBy(xpath = "//div[text()=\"Create Buyer Credit Profile\"]")
+    public WebElementFacade checkCreateBuyerCreditProfilePage;
+
     @FindBy(xpath = "//div[@class=\"lls-date-editor lls-input lls-input--suffix lls-date-editor--year\"]//input")
     public WebElementFacade getLastFiscalYear;
 
@@ -80,4 +83,10 @@ public class createBuyerCreditFile_page extends PageObject {
 
     @FindBy(xpath = "//span[text()=\"Save \"]")
     public WebElementFacade clickSaveBuyerCreditProfile;
+
+    @FindBy(xpath = "//div[@class=\"lls-menu-item is-active\"]//span[text()=\"Buyer Credit Profile List\"]")
+    public WebElementFacade checkBuyerCreditProfileList;
+
+    @FindBy(xpath = "//td[@title=\"1\"]/following-sibling::td[@data-key=\"f103l7h9\"]//span[@data-key=\"f1bkanph\"]//i")
+    public WebElementFacade clickSubmit;
 }
