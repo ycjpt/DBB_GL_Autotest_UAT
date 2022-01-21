@@ -3,7 +3,6 @@ package com.hsbc.cmb.hk.dbb.steps.supplyChains.systemManager;
 import com.hsbc.cmb.hk.dbb.pages.supplyChains.systemManager.createAdminUser_page;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.openqa.selenium.By;
 
 import static com.hsbc.cmb.hk.dbb.utils.RandomPhoneNumber.randomPhoneNum;
 
